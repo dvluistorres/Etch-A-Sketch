@@ -1,0 +1,17 @@
+/* style */
+#sketch {
+    display: flex;
+    /*background-color: #1F2937;*/
+    justify-content: center;
+    position: center;
+    flex-wrap: wrap;
+    width: 60%;
+    padding: 0px;
+    margin: auto;
+}
+
+.square {
+    border-color: black;
+    border-style: double;
+    border-width: 5px;
+}
