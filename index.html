@@ -8,10 +8,20 @@
     <link rel="stylesheet" href="./style.css">
 </head>
 <body onload="createSketch()">
-    <textarea id="size">5</textarea>
-    <button onclick="createSketch()">create</button>
-    <br></br>
-    <div id="sketch"></div>
+    <div class="header">Save for later</div>
+    <div class="content">
+        <div class="left">
+            <textarea id="size">5</textarea>
+            <button class="button" onclick="createSketch()">Create</button>
+        </div>
+        <div id="sketch"></div>
+        <div class="right">
+            <button class="button">Choose color</button>
+            <button class="button">Warm</button>
+            <button class="button">Rainbow</button>
+            <button class="button">Black</button>
+        </div>
+    </div>
 </body>
 <script src="./script.js"></script>
 </html>

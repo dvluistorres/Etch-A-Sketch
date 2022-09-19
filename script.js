@@ -12,7 +12,6 @@ function removeElementsByClass(className){
 }
 
 function createSketch (size){
-    console.log(parseInt(document.getElementById("size")));
     size = parseInt(document.getElementById("size").value);
     const squares = document.getElementsByClassName("square");
     if (squares.length != 0) {
@@ -24,12 +23,25 @@ function createSketch (size){
         sketch.appendChild(square);
     }
     const nsquares = document.getElementsByClassName("square");
-    let fff = sketch.offsetWidth
-    let aaa = Math.floor(fff/size)*0.9;
+    let sketchWidth = sketch.offsetWidth
+    let ssize = Math.floor(sketchWidth/size);
     for(let j=0 ; j<nsquares.length ;j++){
-        nsquares[j].style.width = `${aaa}px`;
-        nsquares[j].style.height = `${0.6*(100/size)*.8}vw`;
-        /**nsquares[j].style.paddingTop = "100%";**/
-        nsquares[j].style.flex = `0 1 ${(100/size)*.80}%`;
+        nsquares[j].style.width = `${Math.floor(ssize)-3}px`;
+        nsquares[j].style.height = `${Math.floor(ssize)-3}px`;
     }
 }
+
+function refresh() {
+    const nsquares = document.getElementsByClassName("square");
+    let sketchWidth = sketch.offsetWidth;
+    size = parseInt(document.getElementById("size").value);
+    let ssize = Math.floor(sketchWidth/size);
+    for(let j=0 ; j<nsquares.length ;j++){
+        nsquares[j].style.width = `${Math.floor(ssize)-3}px`;
+        nsquares[j].style.height = `${Math.floor(ssize)-3}px`;
+    }
+}
+
+window.addEventListener('resize', function () {
+    refresh();
+})
