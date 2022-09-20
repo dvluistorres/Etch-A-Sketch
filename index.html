@@ -8,18 +8,17 @@
     <link rel="stylesheet" href="./style.css">
 </head>
 <body onload="createSketch()">
-    <div class="header">Save for later</div>
+    <div class="header">Draw a Sketch</div>
     <div class="content">
         <div class="left">
-            <textarea id="size">5</textarea>
+            <textarea id="size">20</textarea>
             <button class="button" onclick="createSketch()">Create</button>
         </div>
         <div id="sketch"></div>
         <div class="right">
-            <button class="button">Choose color</button>
-            <button class="button">Warm</button>
-            <button class="button">Rainbow</button>
-            <button class="button">Black</button>
+            <button class="button" class="bcolor" id="black">Black</button>
+            <button class="button" class="bcolor" id="red">Red</button>
+            <button class="button" class="bcolor" id="random">Random</button>
         </div>
     </div>
 </body>
