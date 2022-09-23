@@ -7,14 +7,14 @@
     <title>Document</title>
     <link rel="stylesheet" href="./style.css">
 </head>
-<body onload="createSketch()">
+<body onload="createSketch()" ondragstart="return false">
     <div class="header">Draw a Sketch</div>
     <div class="content">
         <div class="left">
             <textarea id="size">20</textarea>
             <button class="button" onclick="createSketch()">Create</button>
         </div>
-        <div id="sketch"></div>
+        <div id="sketch" draggable="false"></div>
         <div class="right">
             <button class="button" class="bcolor" id="black">Black</button>
             <button class="button" class="bcolor" id="red">Red</button>
