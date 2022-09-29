@@ -31,18 +31,30 @@ function generateRandomColor(){
     let randColor = randomNumber.padStart(6, 0);   
     return `#${randColor.toUpperCase()}`
 }
+let randomActive = false
+
 const buttons = document.getElementsByClassName('button');
 for (const button of buttons) {
-    button.addEventListener('click', function onClick() {
+        button.addEventListener('click', function onClick() {
+        randomActive = false
         switch (this.id) {
             case "black":
                 col = "black";
+                console.log(col);
                 break;
             case "red":
                 col = "red"
                 break;
             case "random":
-                col = generateRandomColor();
+                randomActive = true;
+                window.addEventListener('mousemove', function newRandom() {
+                    if (randomActive == true) {
+                    col = generateRandomColor();
+                    }
+                })
+                break;
+            case "erase":
+                col = "white"
                 break;
         }
     });
@@ -76,8 +88,13 @@ function createSketch (size){
         /** To paint if it's clicked*/
         nsquares[j].addEventListener('mouseover', function hopping(event) {
             if(mouseDown>0){
-            this.style.backgroundColor = `${col}`}
+            this.style.backgroundColor = `${col}`;
+            }
         });
+        nsquares[j].addEventListener('mousedown', function moDown(event) {
+            this.style.backgroundColor = `${col}`
+        });
+        
     }
 }}
 
