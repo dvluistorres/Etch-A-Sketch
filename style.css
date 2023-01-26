@@ -46,7 +46,7 @@ body{
 
 #sketch {
     display: flex;
-    background-color: white
+    background-color: white;
     justify-content: center;
     position: center;
     flex-wrap: wrap;
